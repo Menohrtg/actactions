@@ -25,5 +25,5 @@ jobs:
                 "{powershell_env}={working}" >> $env:GITHUB_ENV
             - name: output the `$powershell_env
               run: |
-               Write-Host "the value of `$powershell_env is  $env.powershell_env"
+               Write-Host "the value of `$powershell_env is  ${$env.powershell_env}"
                   
