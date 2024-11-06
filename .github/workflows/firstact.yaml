@@ -26,4 +26,12 @@ jobs:
             - name: output the `$powershell_env
               run: |
                Write-Host "the value of `$powershell_env is  $env:powershell_env"
+            - name: Set the value
+              id: step_one
+              run: |
+               "action_state=yellow" >> $env:GITHUB_ENV
+            - name: Use the value
+              id: step_two
+              run: |
+                Write-Output "$env:action_state" # This will output 'yellow'
                   
