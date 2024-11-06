@@ -1,0 +1,22 @@
+name: First workflow
+on:
+    push:
+        branches: 
+            - main
+            - dev
+            - test
+    pull_request: 
+        branches: 
+            - main
+            - dev
+            - test
+    workflow_dispatch: 
+jobs:
+    build_job:
+        runs-on: windows-latest
+        steps:
+            - name: checkout step
+              uses: actions/checkout@v3
+            - name: Run an inline script
+              run: |
+                Write-Host "I love to test and see for myself"
