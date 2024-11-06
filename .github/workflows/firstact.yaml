@@ -13,10 +13,17 @@ on:
     workflow_dispatch: 
 jobs:
     build_job:
-        runs-on: ubuntu-latest
+        runs-on: windows-latest
         steps:
             - name: checkout step
               uses: actions/checkout@v3
             - name: Run an inline script
               run: |
-                Write-Host "I love to test and see for myself"
+                echo "I love to test and see for myself"
+            - name: Create an ENV in powershell
+              run: |
+                "{powershell_env}={working}" >> $env:GITHUB_ENV
+            - name: output the `$powershell_env
+              run: |
+               Write-Host "the value of `$powershell_env is : $env:powershell-env"
+                  
