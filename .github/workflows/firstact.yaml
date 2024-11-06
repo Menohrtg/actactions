@@ -13,7 +13,7 @@ on:
     workflow_dispatch: 
 jobs:
     build_job:
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         steps:
             - name: checkout step
               uses: actions/checkout@v3
