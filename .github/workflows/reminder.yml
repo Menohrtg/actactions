@@ -8,12 +8,15 @@ on:
 env:
     school: GS ASHONG
     Sub_division: Batibo
+
 jobs:
     build:
         runs-on: windows-latest
         env:
           school: Down Town Bamenda
           Sub_division: Mezam 
+        outputs:
+          name: ${{steps.var1.outputs.name}}
         steps:
             - name: checkout🍏
               uses: actions/checkout@v2
@@ -24,4 +27,11 @@ jobs:
               env:
                 school: ESSOS
                 sub_division: Foudi
-               
+            - name: 🍏 Create inline variable
+              id: var1
+              run: |
+               echo "name=Enoh" >> GITHUB_OUTPUT
+            - name : 🍏 Invoke output
+              run: |
+             
+                Write-Host "the new output has been called to be $outputs:name "
