@@ -13,7 +13,7 @@ jobs:
     build:
         environment: 
             name: PROD
-            url: www.enohrose.com
+            url: https://www.enohrose.com
         runs-on: windows-latest
         env:
           school: Down Town Bamenda
