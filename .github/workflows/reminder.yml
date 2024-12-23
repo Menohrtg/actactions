@@ -34,4 +34,40 @@ jobs:
             - name : 🍏 Invoke output
               run: |
              
-                Write-Host "the new output has been called to be $outputs:name "
+                Write-Host "the new output has been called to be name: REMINDER
+run-name: checking all steps for environment variables
+on:
+    push: 
+        branches:
+            - main 
+            - dev
+env:
+    school: GS ASHONG
+    Sub_division: Batibo
+
+jobs:
+    build:
+        runs-on: windows-latest
+        env:
+          school: Down Town Bamenda
+          Sub_division: Mezam 
+        outputs:
+          name: ${{steps.var1.outputs.name}}
+        steps:
+            - name: checkout🍏
+              uses: actions/checkout@v2
+            - name: 🍏 Refrence a variable
+              run: |
+                Write-Host "the name of my primary school is ${env:school}"
+                Write-Host "${{env.school}} is found in ${env:sub_division} sub division"
+              env:
+                school: ESSOS
+                sub_division: Foudi
+            - name: 🍏 Create inline variable
+              id: var1
+              run: |
+               echo "name=Enoh" >> GITHUB_OUTPUT
+            - name : 🍏 Invoke output
+              run: |
+             
+                Write-Host "the new output has been called to be ${{steps.var1.outputs.name}} "
