@@ -11,6 +11,8 @@ env:
 
 jobs:
     build:
+        environment: 
+            name: DEV
         runs-on: windows-latest
         env:
           school: Down Town Bamenda
@@ -36,6 +38,10 @@ jobs:
             - name: 🎯output from the same job 
               run: |
                 Write-Host "this is the output variable ${{steps.var1.outputs.name}}" 
+
+            - name: call the secret
+              run: |
+                Write-Host "this is the dev secret ${{secrets.DEV_TEST}}"
             
     down_stream:
         runs-on: windows-latest
