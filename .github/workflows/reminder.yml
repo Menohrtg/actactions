@@ -31,7 +31,10 @@ jobs:
               id: var1
               run: |
                echo "name=Enoh" >> "GITHUB_OUTPUT"
-            - name : 🍏 Invoke output
-              run: |
-             
-                Write-Host "the new output has been called to be ${{steps.var1.outputs.name}} "
+    down_stream:
+        runs-on: windows-latest
+        needs: build
+        steps:
+        - name : 🍏 Invoke output
+          run: |
+            Write-Host "the new output has been called to be ${{needs.build.outputs.name}} "
