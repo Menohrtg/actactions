@@ -16,6 +16,6 @@ jobs:
               uses: actions/checkout@v2
             - name: 🍏 Refrence a variable
               run: |
-                Write-Host "the name of my primary school is $env:school"
+                Write-Host "the name of my primary school is ${env:school}"
                 Write-Host "${{env.school}} is found in $env:sub_division sub division"
                
