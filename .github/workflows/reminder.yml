@@ -30,7 +30,7 @@ jobs:
             - name: 🍏 Create inline variable
               id: var1
               run: |
-               echo "name=Enoh" >> GITHUB_OUTPUT
+               echo "name=Enoh" >> "GITHUB_OUTPUT"
             - name : 🍏 Invoke output
               run: |
              
