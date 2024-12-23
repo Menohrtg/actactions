@@ -1,13 +1,21 @@
 name: REMINDER
-run-name: checking all steps 
+run-name: checking all steps for environment variables
 on:
     push: 
         branches:
             - main 
             - dev
+env:
+    school: GS ASHONG
+    Sub_division: Batibo
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: windows-latest
         steps:
             - name: checkout🍏
               uses: actions/checkout@v2
+            - name: 🍏 Refrence a variable
+              run: |
+                Write-Host "the name of my primary school is $school"
+                Write-Host "${{env.school}} is found in $sub_divion sub division"
+               
