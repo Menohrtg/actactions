@@ -41,7 +41,7 @@ jobs:
 
             - name: call the secret
               run: |
-                Write-Host "this is the dev secret ${{secrets.DEV_TEST}}"
+                Write-Host "this is the dev secret ${{secrets.PROD}}"
             
     down_stream:
         runs-on: windows-latest
