@@ -30,8 +30,13 @@ jobs:
             - name: 🍏 Create inline variable
               id: var1
               run: |
-               echo "name=Enoh" >> env:GITHUB_OUTPUT
+               add-content -path $env:GITHUB_OUTPUT -value "name=ENOH ROSE"
+               #echo "name=Enoh" >> env:GITHUB_OUTPUT
                echo "this is love"
+            - name: 🎯output from the same job 
+              run: |
+                Write-Host "${{steps.var1.outputs.name}}" 
+            
     down_stream:
         runs-on: windows-latest
         needs: build
