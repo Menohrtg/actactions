@@ -35,7 +35,7 @@ jobs:
                echo "this is love"
             - name: 🎯output from the same job 
               run: |
-                Write-Host "${{steps.var1.outputs.name}}" 
+                Write-Host "this is the output variable ${{steps.var1.outputs.name}}" 
             
     down_stream:
         runs-on: windows-latest
