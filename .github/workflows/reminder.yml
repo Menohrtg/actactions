@@ -21,4 +21,7 @@ jobs:
               run: |
                 Write-Host "the name of my primary school is ${env:school}"
                 Write-Host "${{env.school}} is found in ${env:sub_division} sub division"
+              env:
+                school: ESSOS
+                sub_division: Foudi
                
