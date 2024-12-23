@@ -1,0 +1,13 @@
+name: REMINDER
+run-name: checking all steps 
+on:
+    push: 
+        branches:
+            - main 
+            - dev
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout 
+              uses: actions/checkout@v2
