@@ -1,15 +1,15 @@
 name: First workflow
-on:
-    push:
-        branches: 
-            - main
-            - dev
-            - test
-    pull_request: 
-        branches: 
-            - main
-            - dev
-            - test
+# on:
+#     push:
+#         branches: 
+#             - main
+#             - dev
+#             - test
+#     pull_request: 
+#         branches: 
+#             - main
+#             - dev
+#             - test
     workflow_dispatch: 
 jobs:
     build_job:
