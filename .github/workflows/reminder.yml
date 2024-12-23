@@ -11,6 +11,9 @@ env:
 jobs:
     build:
         runs-on: windows-latest
+        env:
+          school: Down Town Bamenda
+          Sub_division: Mezam 
         steps:
             - name: checkout🍏
               uses: actions/checkout@v2
