@@ -44,6 +44,8 @@ jobs:
               run: |
                 Write-Host "this is the dev secret ${{secrets.PROD}}"
                 Write-Host " this is my first name ${{vars.FIRST_NAME}}"
+                Write-Host "let us output using powershell ${vars:FIRST_NAME}"
+            
             
     down_stream:
         runs-on: windows-latest
