@@ -23,26 +23,27 @@ jobs:
         steps:
             - name: checkout🍏
               uses: actions/checkout@v2
-            - name: 🍏 Refrence a variable
+            - name: 🍏 Refrence a variable🍏
               run: |
                 Write-Host "the name of my primary school is ${env:school}"
                 Write-Host "${{env.school}} is found in ${env:sub_division} sub division"
               env:
                 school: ESSOS
                 sub_division: Foudi
-            - name: 🍏 Create inline variable
+            - name: 🍏 Create inline variable🍏
               id: var1
               run: |
                add-content -path $env:GITHUB_OUTPUT -value "name=ENOH ROSE"
                #echo "name=Enoh" >> env:GITHUB_OUTPUT
                echo "this is love"
-            - name: 🎯output from the same job 
+            - name: 🎯output from the same job 🍏
               run: |
                 Write-Host "this is the output variable ${{steps.var1.outputs.name}}" 
 
-            - name: call the secret
+            - name: 🍏call the secret and vars🍏
               run: |
                 Write-Host "this is the dev secret ${{secrets.PROD}}"
+                Write-Host " this is my first name ${{vars.FIRST_NAME}}"
             
     down_stream:
         runs-on: windows-latest
