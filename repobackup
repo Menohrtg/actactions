@@ -1,0 +1,23 @@
+trigger: none
+schedules:
+- cron: "0 3 * * 5"
+  displayName: Daily Backup
+  branches:
+    include:
+    - main
+  always: true
+  
+variables:
+- group: Repo_Backup
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: AzurePowerShell@5
+  inputs:
+    azureSubscription: 'AzureConnection-Dev'
+    ScriptType: 'FilePath'
+    ScriptPath: 'repobackup.ps1'
+    ScriptArguments: '$(OrganizationUrl) $(PersonalAccessToken) $(Project) $(StorageAccountName) $(StorageAccountKey)'
+    azurePowerShellVersion: 'LatestVersion'
