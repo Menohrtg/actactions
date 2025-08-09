@@ -15,3 +15,4 @@ ansible-playbook -i /etc/ansible/hosts <name of playbook>
 # Let us learn how to bullet point items
 * Main module
    * main.tf , is the main module 
+![Marccelus](https://github.com/user-attachments/assets/58ae3d22-3061-4489-9053-a26aba4c1a7c)
